@@ -4,8 +4,8 @@
         <title>Hunter's Website</title>
                <style>
             body {
-                background: rgb(125, 198, 205);
-                color: rgb(45, 45, 45);
+                background: lightblue;
+                color: rgb(255,20,147);
                 padding: 10px;
                 font-family: arial;
             }
@@ -16,19 +16,21 @@
             [id=all-contents] {
                 max-width: 800px;
                 margin: auto;
+                
             }
     
             /* navigation menu */
             nav {
-                background: rgb(250, 80, 41);
-                margin: 0 auto; margin-bottom: 20px;
+                background: black;
+                margin: 10px auto; margin-bottom: 20px;
                 display: flex;
-                padding: 10px;
+                padding: 20px;
+               
             }
             nav header {
                 display: flex;
                 align-items: center;
-                color: rgb(255, 255, 255);
+                color: blue;
                 flex: 1;
             }
             nav ul {
@@ -45,7 +47,7 @@
     
             /* main container area beneath menu */
             main {
-                background: rgb(245, 238, 219);
+                background:  rgb(245, 238, 219);
                 display: flex;
             }
             [class=sidebar] {
@@ -58,16 +60,28 @@
             [class=content] {
                 flex: 1;
                 padding: 15px;
+                
             }
             [class=interests] header {
                 font-size: 1.25em;
             }
+        [class=hi-ohio-logo]
+        {
+            border-style:solid;
+            border-width:5px;
+            border-color:blue;
+            border-radius:5px;
+            
+        }
+        
+           
         </style>
     </head>
     
     <body>
         <div id="all-contents">
-            <nav>
+            <nav> 
+            <header>Hunter's Website</header>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="portfolo.html">Portfolio</a></li>
@@ -76,18 +90,19 @@
             
             <main>
                 <div class="sidebar">
-                <img width=100 height=100 src="https://1800hocking.files.wordpress.com/2011/07/hi-ohio-logo.jpg">
+                <img class="hi-ohio-logo" src="https://1800hocking.files.wordpress.com/2011/07/hi-ohio-logo.jpg">
                 </div>
                     
                 <div class="content">
                     
                     </section>
-                    <header>Hunter
+                    <header>Hunter Nguyen
                     <p>Junior at Salmen High School
                     <section class="interest">
+                        <p>Interests</p>
                         <ul>
                             <li>Video Games</li>
-                            <li>Volleyball</li></li>
+                            <li>Volleyball</li>
                             <li>Eating</li>
                         </ul>
                     </section>
