@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Bouncing Box</title>
+	<script src="jquery.min.js"></script>
+
+	<!-- BEGIN CSS -->
+	<style>
+		/* TODO 1 */
+		[class="box"] {
+			display: block;
+			position: absolute;
+			width: 70px;
+			height: 70px;
+			top: 100px;
+			left: 0px;
+			background-color: teal;
+			font-size: 300%; 
+			color:yellow;
+			text-align: center;
+			background-color:rgb(0, 153, 255);
+			background-image: url(http://weclipart.com/gimg/8BBA65309BC95EBE/pokemon-ball-clipart-1.jpg);
+			background-size:cover;
+			background-position:-12px 0px;
+			border-radius:50%;
+			
+		}
+		body{
+			background-image: url(http://vignette4.wikia.nocookie.net/fantendo/images/5/51/Pok%C3%A9mon_Stadium_2.jpg/revision/latest?cb=20141221100214);
+			background-repeat:no-repeat;
+            background-size:cover;
+		}
+	
+	</style>
+
+</head>
+<body class="board">
+	<!-- HTML for the box -->
+	<div class="box">?</div>
+	
+	
+
+	<!-- BEGIN JAVASCRIPT -->
+	<script>
+		(function(){
+			'use strict'
+
+			// Variable declarations
+			
+			var box;
+			var boardWidth;
+			var boardHeight;
+			var update;
+			var handleBoxClick;
+			var hdirection;
+			var vdirection;
+			var hposition;
+			var vposition;
+			var points;
+			var speed;
+			
+			
+			
+			
+			
+			// jQuery stuff setup for you
+			box = $('.box');
+			boardWidth = $('.board').width();
+			boardHeight = screen.height -225;
+
+			// TODO 2
+			hposition = 0;
+			vposition = 0;
+			points= 0;
+			speed = 10;
+			hdirection = 1;
+			vdirection = 1;
+
+			
+			box.css('left', hposition);
+			box.css('top', vposition);
+			box.text(points);
+
+
+		
+
+			// TODO 3 / 4
+			update = function(){
+				hposition += (speed * hdirection);
+				vposition += (speed * vdirection);
+				box.css('left', hposition);
+				box.css('top', vposition);
+				
+				if(hposition > boardWidth){
+				hdirection =-1;
+				}
+				if (hposition<0){
+				hdirection=1;
+				}
+				if(vposition > boardHeight){
+				vdirection = -1;
+				}
+				if (vposition < 0){
+				vdirection = 1;
+				}
+				box.css('left', hposition);
+				box.css('top', vposition);
+				box.text(points);
+			};
+			
+
+			// TODO 5 / 6
+			handleBoxClick = function() {
+				speed = speed +4;
+				position = 0;
+				points = points + 1;
+				
+				
+			}
+
+			//this calls update every 50 milliseconds
+			setInterval(update, 50);
+			// this calls the handle handleBoxClick function every time the box is clicked on
+			box.on('click', handleBoxClick);
+			
+		})();
+	</script>
+</body>
+</html>
