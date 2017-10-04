@@ -68,6 +68,7 @@
 			box = $('.box');
 			boardWidth = $('.board').width();
 			boardHeight = screen.height -225;
+			
 
 			// TODO 2
 			hposition = 0;
@@ -76,12 +77,14 @@
 			speed = 10;
 			hdirection = 1;
 			vdirection = 1;
-
 			
 			box.css('left', hposition);
 			box.css('top', vposition);
 			box.text(points);
 
+
+			
+			
 
 		
 
@@ -91,6 +94,7 @@
 				vposition += (speed * vdirection);
 				box.css('left', hposition);
 				box.css('top', vposition);
+				box.text(points);
 				
 				if(hposition > boardWidth){
 				hdirection =-1;
@@ -104,20 +108,17 @@
 				if (vposition < 0){
 				vdirection = 1;
 				}
-				box.css('left', hposition);
-				box.css('top', vposition);
-				box.text(points);
+			
 			};
 			
 
 			// TODO 5 / 6
 			handleBoxClick = function() {
 				speed = speed +4;
-				position = 0;
+				hposition = 0;
 				points = points + 1;
 				
-				
-			}
+			};
 
 			//this calls update every 50 milliseconds
 			setInterval(update, 50);
