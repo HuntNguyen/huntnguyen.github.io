@@ -37,9 +37,17 @@
         
 
         // example:
-        platform.create(500, 400);
-        platform.create(450, 500);
-        platform.create(200, 600);
+        platform.create(100, 550, .5);
+        platform.create(700, 550, .5);
+        platform.create(450, 470, .5);
+        platform.create(100, 370, .5);
+        platform.create(775, 370, .3);
+        platform.create(400, 270, .5);
+        platform.create(700, 195, .5);
+        platform.create(100, 200, .5);
+        platform.create(400, 100, .5);
+        
+       
         
         
         

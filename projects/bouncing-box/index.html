@@ -53,12 +53,14 @@
 			var boardHeight;
 			var update;
 			var handleBoxClick;
-			var hdirection;
+			var hdirection; 
 			var vdirection;
 			var hposition;
 			var vposition;
 			var points;
 			var speed;
+			
+			
 			
 			
 			
@@ -90,26 +92,28 @@
 
 			// TODO 3 / 4
 			update = function(){
-				hposition += (speed * hdirection);
-				vposition += (speed * vdirection);
-				box.css('left', hposition);
-				box.css('top', vposition);
-				box.text(points);
 				
-				if(hposition > boardWidth){
-				hdirection =-1;
-				}
-				if (hposition<0){
-				hdirection=1;
-				}
-				if(vposition > boardHeight){
-				vdirection = -1;
-				}
-				if (vposition < 0){
-				vdirection = 1;
-				}
+				
+					hposition += (speed * hdirection);
+					vposition += (speed * vdirection);
+					box.css('left', hposition);
+					box.css('top', vposition);
+					box.text(points);
+				
+					if(hposition > boardWidth){
+					hdirection =-1;
+					}
+					if (hposition < 0){
+					hdirection=1;
+					}
+					if(vposition > boardHeight){
+					vdirection = -1;
+					}
+					if (vposition < 0){
+					vdirection = 1;
+					}
 			
-			};
+					};
 			
 
 			// TODO 5 / 6
@@ -117,6 +121,7 @@
 				speed = speed +4;
 				hposition = 0;
 				points = points + 1;
+			
 				
 			};
 
