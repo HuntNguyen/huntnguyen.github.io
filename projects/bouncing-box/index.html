@@ -26,6 +26,9 @@
 			border-radius:50%;
 			
 		}
+		
+			
+		
 		body{
 			background-image: url(http://vignette4.wikia.nocookie.net/fantendo/images/5/51/Pok%C3%A9mon_Stadium_2.jpg/revision/latest?cb=20141221100214);
 			background-repeat:no-repeat;
@@ -38,6 +41,7 @@
 <body class="board">
 	<!-- HTML for the box -->
 	<div class="box">?</div>
+	
 	
 	
 
@@ -70,7 +74,7 @@
 			box = $('.box');
 			boardWidth = $('.board').width();
 			boardHeight = screen.height -225;
-			
+		
 
 			// TODO 2
 			hposition = 0;
@@ -83,7 +87,8 @@
 			box.css('left', hposition);
 			box.css('top', vposition);
 			box.text(points);
-
+			
+		
 
 			
 			
@@ -114,7 +119,8 @@
 					}
 			
 					};
-			
+					
+					
 
 			// TODO 5 / 6
 			handleBoxClick = function() {
@@ -124,7 +130,8 @@
 			
 				
 			};
-
+			
+		
 			//this calls update every 50 milliseconds
 			setInterval(update, 50);
 			// this calls the handle handleBoxClick function every time the box is clicked on
