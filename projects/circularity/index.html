@@ -23,6 +23,9 @@
         
         <style type="text/css">
             /*override default styles here*/
+            #canvas{
+                background: linear-gradient(to bottom, #0099f7 0%, #f11712 100%); 
+            }
         </style>
     </head>
     <body>
@@ -63,7 +66,7 @@
                  * Using the count variable we can keep track of how many times we have run the loop.
                  * Here we want to run our loop 100 times to create 100 circles.
                  */
-                for (var count = 1; count <= 500; count++) {
+                for (var count = 1; count <= 125; count++) {
                     // TODO 3 : YOUR CODE STARTS HERE //////////////////////////
                     circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
 					
