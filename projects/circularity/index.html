@@ -24,7 +24,7 @@
         <style type="text/css">
             /*override default styles here*/
             #canvas{
-                background: linear-gradient(to bottom, #0099f7 0%, #f11712 100%); 
+                background: linear-gradient(to bottom, #0099f7 12%, #f11712 100%);
             }
         </style>
     </head>
@@ -52,6 +52,8 @@
                 // TODO 1: Declare our variables //
                 var i, circle, circles;
                 
+                
+                
                     
                 
                 
@@ -59,6 +61,7 @@
                 // TODO 2: Initialize our variables //
                 i=0;
                 circles=[];
+                
                 
                 
                 /* 
@@ -104,7 +107,7 @@
                         
                         if (circle.x > canvas.width + circle.radius) {
                             // your code to place circle exactly off the stage at the left-side //
-                            
+                            circle.x=0;
                         } else if ( circle.x < canvas.width + circle.radius ) {
                             // your code to place circle exactly off the stage at the right-side //
                             
@@ -112,7 +115,7 @@
                         
                         if ( circle.y > canvas.height + circle.radius ) {
                             // code to place circle exactly off the stage at the bottom //
-                            
+                            circle.y=0;
                         } else if (circle.y < canvas.height + circle.radius ) {
                             // your code to place circle exactly off the stage at the top //
                             
