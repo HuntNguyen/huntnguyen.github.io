@@ -78,7 +78,7 @@
     	            draw.blurFilterOn(circle);
                     }
     
-                    physikz.addRandomVelocity(circle, canvas);
+                    physikz.addRandomVelocity(circle, canvas, 4, 4);
                     circles.push(circle);
                     view.addChild(circle);
                     
@@ -108,18 +108,18 @@
                         
                         if (circle.x > canvas.width + circle.radius) {
                             // your code to place circle exactly off the stage at the left-side //
-                            circle.x=0;
-                        } else if ( circle.x < canvas.width + circle.radius ) {
+                            circle.x=0 + circle.radius;
+                        } else if ( circle.x < 0 - circle.radius ) {
                             // your code to place circle exactly off the stage at the right-side //
-                            circle.x;
+                            circle.x= canvas.width + circle.radius;
                         }
                         
                         if ( circle.y > canvas.height + circle.radius ) {
                             // code to place circle exactly off the stage at the bottom //
-                            circle.y=0;
-                        } else if (circle.y < canvas.height + circle.radius ) {
+                            circle.y=0 + circle.radius;
+                        } else if (circle.y < 0 - circle.radius ) {
                             // your code to place circle exactly off the stage at the top //
-                            circle.y;
+                            circle.y= canvas.height - circle.radius;
                         }
                         
                         // YOUR TODO 6 CODE ENDS HERE //////////////////////////
