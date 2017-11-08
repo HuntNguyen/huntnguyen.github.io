@@ -66,6 +66,13 @@
             [class=sidebar] img {
                 width: 200px;
             }
+            [class=main2] {
+                flex:1;
+                padding:15px;
+                color:blue;
+                margin: 10px auto; margin-bottom: 20px;
+                
+            }
             [class=content] {
                 flex: 1;
                 padding: 15px;
@@ -86,6 +93,14 @@
             
             
            </style>
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+           <script>
+                    $(document).ready(function(){
+                         $("button").click(function(){
+                            $("ul.p-interests").fadeOut();
+              });
+          });
+           </script>
     </head>
     
     <body>
@@ -117,6 +132,22 @@
                    
                 </div>
             </main>
+            <main class="main2">
+                <div class="professional=content">
+                    <header>Professional Interests</header>
+                    <section class="interest">
+                        <button class="button">My Professional Interests </button>
+                        <ul class="p-interests">
+                            <li>Programming</li>
+                            <li>Engineering</li>
+                            <li>Law</li>
+                        </ul>
+                    </section>
+                    
+                    
+                    
+                </div>
+             </main>
         </div>
     </body>
 </html>
