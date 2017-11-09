@@ -70,7 +70,7 @@
                  * Using the count variable we can keep track of how many times we have run the loop.
                  * Here we want to run our loop 100 times to create 100 circles.
                  */
-                for (var count = 1; count <= 100; count++) {
+                for (var count = 1; count <= 150; count++) {
                     // TODO 3 : YOUR CODE STARTS HERE //////////////////////////
                     circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
 					
@@ -78,7 +78,7 @@
     	            draw.blurFilterOn(circle);
                     }
     
-                    physikz.addRandomVelocity(circle, canvas, 4, 4);
+                    physikz.addRandomVelocity(circle, canvas, 2, 2);
                     circles.push(circle);
                     view.addChild(circle);
                     
