@@ -65,17 +65,9 @@
                 i=0;
                 circles=[];
                 
-                
-                
-                /* 
-                 * For-loops let us execute a block of code a set number of times.
-                 * Using the count variable we can keep track of how many times we have run the loop.
-                 * Here we want to run our loop 100 times to create 100 circles.
-                 */
-                for (var count = 1; count <= 150; count++) {
-                    // TODO 3 : YOUR CODE STARTS HERE //////////////////////////
+                function makeCircle() {
                     circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
-					
+
                     if (circle.alpha < .2) {
     	            draw.blurFilterOn(circle);
                     }
@@ -84,9 +76,24 @@
                     circles.push(circle);
                     view.addChild(circle);
                     
-                    
-                    
-                    
+                    circle.addEventListener("click", function(event) { 
+					   // event.target.velocityX *= -1;
+					   // event.target.velocityY *= -1;
+					    console.log("circle clicked");
+					    view.removeChild(event.target);
+					    
+					    makeCircle();
+					})
+                }
+                
+                /* 
+                 * For-loops let us execute a block of code a set number of times.
+                 * Using the count variable we can keep track of how many times we have run the loop.
+                 * Here we want to run our loop 100 times to create 100 circles.
+                 */
+                for (var count = 1; count <= 150; count++) {
+                    // TODO 3 : YOUR CODE STARTS HERE //////////////////////////
+                    makeCircle();
                 }
                 
                 view.addChild(fps);
