@@ -71,6 +71,7 @@
                 padding:15px;
                 color:blue;
                 margin: 10px auto; margin-bottom: 20px;
+               
                 
             }
             [class=content] {
@@ -88,7 +89,13 @@
             border-radius:20%;
             border-color:blue;
             }
+            [class = professional-content]{
+                position:relative;
+                
+            }
             
+            
+        
             
             
             
@@ -97,8 +104,11 @@
            <script>
                     $(document).ready(function(){
                          $("button").click(function(){
-                            $("ul.p-interests").animate({
-                                height: 'toggle',
+                            $("main.main2").animate({
+                                height: '200px',
+                                left: '100px',
+                                width: '150px'
+                                
                                 
                             });
               });
@@ -137,7 +147,7 @@
                 </div>
             </main>
             <main class="main2">
-                <div class="professional=content">
+                <div class="professional-content">
                     <header>Professional Interests</header>
                     <section class="interest">
                         <button class="button">My Professional Interests </button>
