@@ -97,7 +97,10 @@
            <script>
                     $(document).ready(function(){
                          $("button").click(function(){
-                            $("ul.p-interests").fadeToggle("slow");
+                            $("ul.p-interests").animate({
+                                height: 'toggle',
+                                
+                            });
               });
           });
                     
