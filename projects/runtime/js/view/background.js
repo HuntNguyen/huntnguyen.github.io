@@ -19,6 +19,7 @@
         // container which will be returned
         var background;
          var backgroundBox;
+         var building;
         var buildings = [];
         // add objects for display inb ackground
         // called at the start of game and whenever the page is resized
@@ -30,25 +31,27 @@
            
 
             background.removeAllChildren();
+            
+             
 
             // TODO: 3 - YOUR DRAW CODE GOES HERE
 
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(canvasWidth,canvasHeight,'black');
+            var backgroundFill = draw.rect(canvasWidth,483,'white');
             background.addChild(backgroundFill);
             
-            var galaxy = draw.bitmap('img/galaxypng.png');
-            galaxy.scaleX = 1;
-            galaxy.scaleY = .5;
-            background.addChild(galaxy);
+            //var galaxy = draw.bitmap('img/galaxypng.png');
+            //galaxy.scaleX = 1;
+            //galaxy.scaleY = .5;
+            //background.addChild(galaxy);
             
-            var saturn = draw.bitmap("http://vignette1.wikia.nocookie.net/clubpenguin/images/c/ce/Beta_Team_Solar_System_Saturn.png/revision/latest?cb=20130108130824.png");
-            saturn.x = 900;
-            saturn.y = 275;
-            saturn.scaleX = .28;
-            saturn.scaleY = .28;
-            background.addChild(saturn);
+            //var saturn = draw.bitmap("http://vignette1.wikia.nocookie.net/clubpenguin/images/c/ce/Beta_Team_Solar_System_Saturn.png/revision/latest?cb=20130108130824.png");
+            //saturn.x = 900;
+            //saturn.y = 275;
+            //saturn.scaleX = .28;
+            //saturn.scaleY = .28;
+            //background.addChild(saturn);
             
             backgroundBox = draw.rect(100,100,'red');
             backgroundBox.x = 300;
@@ -56,14 +59,14 @@
            // background.addChild(backgroundBox);
            
            var buildingHeight = 300;
-            var building;
-            for(var i=0;i<5;++i) {
-                building = draw.rect(75,buildingHeight,'red','Black',1);
+            
+            for(var i=0;i<10;++i) {
+                building = draw.rect(50,buildingHeight,'red','Black',1);
                 building.x = 200*i;
                 building.y = groundY-buildingHeight;
                 background.addChild(building);
                 buildings.push(building);
-}
+                }
             
             
         }
@@ -82,6 +85,17 @@
             if(backgroundBox.x < -100) {
             backgroundBox.x = canvasWidth;
             }
+            
+            for(var i = 0; i < buildings.length; i++){
+                var building = buildings[i];
+        
+                building.x = building.x - 1;
+                
+                if(building.x < -100) {
+                    building.x = canvasWidth;
+                }
+            }
+            
                     
 
         }

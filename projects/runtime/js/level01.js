@@ -16,16 +16,45 @@
             speed: -3,
             gameItems: [
                 {type: 'sawblade',x:400,y:groundY},
-                {type: 'sawblade',x:600,y:groundY},
+                {type: 'sawblade',x:600,y:370},
                 {type: 'sawblade',x:900,y:groundY}
             ]
         };
 
         // set this to true or false depending on if you want to see hitzones
-        game.setDebugMode(true);
+        game.setDebugMode(false);
 
         // BEGIN EDITING YOUR CODE HERE
-
+         var createSawBlade = function(x,y) {
+               
+               
+                  
+            
+            var hitZoneSize = 25;
+            var damageFromObstacle = 10;
+            var myObstacle = game.createObstacle(hitZoneSize,damageFromObstacle);
+            myObstacle.x = x;
+            myObstacle.y = y;
+            
+            game.addGameItem(myObstacle);  
+            var obstacleImage = draw.bitmap('img/sawblade.png');
+            myObstacle.addChild(obstacleImage);
+            
+            obstacleImage.x = -25;
+            obstacleImage.y = -25;
+         }
+            //createSawBlade(500,500);
+            //createSawBlade(600,300);
+            //createSawBlade(700,400);
+            
+            levelData.gameItems.forEach(function(element) {
+                createSawBlade(element.x, element.y);
+            });
+            
+         
+            
+          
+       
 
     }
 })(window);

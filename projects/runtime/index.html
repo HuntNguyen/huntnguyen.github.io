@@ -42,9 +42,13 @@
        <!-- add any additional scripts here -->
         <script src="js/view/hud.js"></script>
         <script src="js/view/background.js"></script>
+        <script src="js/level01.js"></script>
         <style type="text/css">
+        
+        
             /*override default styles here*/
         </style>
+        <script src="js/level01.js"></script>
     </head>
     <body>
         <div id="main">
@@ -131,7 +135,8 @@
                     view.addChild(hud);
                     window.hud = hud;
                 // TODO 3 : create game manager
-                
+                    var game = opspark.createGameManager(app,hud);
+                    opspark.runLevelInGame(game);
             })();
         </script>
     </body>
