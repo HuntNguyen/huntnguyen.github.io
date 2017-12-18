@@ -38,7 +38,7 @@
 
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(canvasWidth,483,'white');
+            var backgroundFill = draw.rect(canvasWidth,498,'black');
             background.addChild(backgroundFill);
             
             //var galaxy = draw.bitmap('img/galaxypng.png');
@@ -46,26 +46,29 @@
             //galaxy.scaleY = .5;
             //background.addChild(galaxy);
             
-            //var saturn = draw.bitmap("http://vignette1.wikia.nocookie.net/clubpenguin/images/c/ce/Beta_Team_Solar_System_Saturn.png/revision/latest?cb=20130108130824.png");
-            //saturn.x = 900;
-            //saturn.y = 275;
-            //saturn.scaleX = .28;
-            //saturn.scaleY = .28;
-            //background.addChild(saturn);
+            
             
             backgroundBox = draw.rect(100,100,'red');
             backgroundBox.x = 300;
             backgroundBox.y = 350;
-           // background.addChild(backgroundBox);
+            //background.addChild(backgroundBox);
            
            var buildingHeight = 300;
             
-            for(var i=0;i<10;++i) {
-                building = draw.rect(50,buildingHeight,'red','Black',1);
-                building.x = 200*i;
-                building.y = groundY-buildingHeight;
-                background.addChild(building);
-                buildings.push(building);
+            //for(var i=0;i<10;++i) {
+                //building = draw.rect(50,buildingHeight,'red','Black',1);
+                //building.x = 200*i;
+                //building.y = groundY-buildingHeight;
+                //background.addChild(building);
+                //buildings.push(building);
+                //}
+                var circle;
+            for(var i=0;i<50;i++){
+                circle = draw.circle(3,'white','LightGray',2);
+                circle.x = canvasWidth*Math.random();
+                circle.y = groundY*Math.random();
+                background.addChild(circle);
+                
                 }
             
             
