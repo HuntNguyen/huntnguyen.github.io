@@ -19,33 +19,71 @@
                 {type: 'sawblade',x:600,y:groundY-105},
                 {type: 'sawblade',x:900,y:groundY},
                 {type: 'sawblade',x:900,y:groundY},
-                {type: 'sawblade',x:1100,y:groundY},
+                {type: 'sawblade',x:1100,y:groundY-105},
                 {type: 'sawblade',x:1400,y:groundY},
-                {type: 'sawblade',x:1200,y:groundY},
-                {type: 'sawblade',x:1800,y:groundY},
-                {type: 'sawblade',x:1900,y:groundY},
+                {type: 'sawblade',x:1700,y:groundY-105},
+                {type: 'sawblade',x:2300,y:groundY},
+                {type: 'sawblade',x:2600,y:groundY},
                 {type: 'sawblade',x:2000,y:groundY},
-                {type: 'sawblade',x:1600,y:groundY},
+                {type: 'sawblade',x:2800,y:groundY-105},
+                {type: 'sawblade',x:3100,y:groundY},
+                {type: 'sawblade',x:3400,y:groundY-105},
+                {type: 'sawblade',x:3800,y:groundY},
+                {type: 'sawblade',x:4100,y:groundY},
+                {type: 'sawblade',x:4500,y:groundY-105},
+                {type: 'sawblade',x:4800,y:groundY},
+                {type: 'sawblade',x:5200,y:groundY-105},
+                {type: 'sawblade',x:5500,y:groundY},
+                {type: 'sawblade',x:5800,y:groundY},
+                {type: 'sawblade',x:6100,y:groundY},
+                {type: 'sawblade',x:6400,y:groundY-105},
                 {type: 'ship',x:1500,y:groundY-25},
-                {type: 'ship',x:2500, y:groundY-25},
+                {type: 'ship',x:2200, y:groundY-25},
+                {type: 'ship',x:2700, y:groundY-25},
+                {type: 'ship',x:3000, y:groundY-25},
+                {type: 'ship',x:3500, y:groundY-25},
+                {type: 'ship',x:4000, y:groundY-25},
+                {type: 'ship',x:4500, y:groundY-25},
+                {type: 'ship',x:500, y:groundY-25},
+                {type: 'ship',x:5000,y:groundY-25},
+                {type: 'ship',x:5500, y:groundY-25},
+                {type: 'ship',x:6000, y:groundY-25},
+                {type: 'ship',x:6500, y:groundY-25},
                 {type: 'alien',x:800, y:groundY},
-                {type: 'alien',x:1000, y:groundY},
-                {type: 'alien',x:1200, y:groundY},
-                {type: 'alien',x:1300, y:groundY},
-                {type: 'alien',x:1400, y:groundY},
-                {type: 'alien',x:1500, y:groundY},
-                {type: 'alien',x:1700,y:groundY},
+                {type: 'alien',x:1100, y:groundY},
+                {type: 'alien',x:1600, y:groundY},
+                {type: 'alien',x:2000, y:groundY},
+                {type: 'alien',x:2800, y:groundY},
+                {type: 'alien',x:3700, y:groundY},
+                {type: 'alien',x:4000,y:groundY},
+                {type: 'alien',x:4200, y:groundY},
+                {type: 'alien',x:4500, y:groundY},
+                {type: 'alien',x:4700, y:groundY},
+                {type: 'alien',x:5200, y:groundY},
+                {type: 'alien',x:5300, y:groundY},
+                {type: 'alien',x:5600, y:groundY},
+                {type: 'alien',x:6200, y:groundY},
                 {type: 'reward',x:2000,y:groundY-90},
                 {type: 'reward',x:1000,y:groundY-90},
                 {type: 'reward',x:1200,y:groundY-90},
                 {type: 'reward',x:1400,y:groundY-90},
                 {type: 'reward',x:1800,y:groundY-90},
                 {type: 'reward',x:1900,y:groundY-90},
+                {type: 'reward',x:2200,y:groundY-90},
+                {type: 'reward',x:2300,y:groundY-90},
+                {type: 'reward',x:2400,y:groundY-90},
+                {type: 'reward',x:2500,y:groundY-90},
+                {type: 'reward',x:2800,y:groundY-90},
+                {type: 'reward',x:3000,y:groundY-90},
+                {type: 'reward',x:3200,y:groundY-90},
+                {type: 'epicReward', x:3000,y:groundY-90},
+                {type: 'epicReward', x:6200,y:groundY-90}
+                
             ]
         };
 
         // set this to true or false depending on if you want to see hitzones
-        game.setDebugMode(true);
+        game.setDebugMode(false);
 
         // BEGIN EDITING YOUR CODE HERE
          var createSawBlade = function(x,y) {
@@ -97,7 +135,7 @@
                      
                 };
                 myObstacle.onProjectileCollision = function(){
-                    game.increaseScore(50);
+                    game.increaseScore(100);
                     myObstacle.shrink();
                 };
          
@@ -124,7 +162,7 @@
                     enemy.shrink();
                 };
                 enemy.onProjectileCollision = function(){
-                    game.increaseScore(50);
+                    game.increaseScore(250);
                     enemy.shrink();
                 };
                 enemy.rotationalVelocity = 1;
@@ -144,11 +182,29 @@
                 game.addGameItem(reward);
                 
                 reward.onPlayerCollision = function(){
-                    game.increaseScore(100);
+                    game.increaseScore(500);
                     reward.shrink();
                     
                 };
                 
+            };
+            
+            var createEpicReward = function(x,y){
+                var epicReward = game.createGameItem('epicReward', 20);
+                var obstacleImage = draw.bitmap('img/planet.png');
+                obstacleImage.x = -50;
+                obstacleImage.y = -50;
+                epicReward.addChild(obstacleImage);
+                
+                epicReward.x =x;
+                epicReward.y = y-50;
+                epicReward.velocityX = -2;
+                game.addGameItem(epicReward);
+                
+                epicReward.onPlayerCollision = function(){
+                    game.increaseScore(1000);
+                    epicReward.shrink();
+                };
             };
             
             
@@ -168,6 +224,10 @@
                 }
                 if(element.type==='reward'){
                     createReward(element.x,element.y);
+                }
+                if(element.type ==='epicReward'){
+                    createEpicReward(element.x, element.y);
+                    
                 }
                 
             });
