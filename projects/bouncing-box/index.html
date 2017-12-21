@@ -48,7 +48,7 @@
 	<!-- BEGIN JAVASCRIPT -->
 	<script>
 		(function(){
-			'use strict'
+			'use strict';
 
 			// Variable declarations
 			
@@ -128,7 +128,10 @@
 			// TODO 5 / 6
 			handleBoxClick = function() {
 				speed = speed +4;
-				hposition = 0;
+				hposition = Math.floor((Math.random() * screen.width) + 1);
+				vposition =  Math.floor((Math.random() * screen.height) + 1);
+				hdirection = Math.floor((Math.random() * 1) +- 1);
+				vdirection = Math.floor((Math.random() * 1) +- 1);
 				points = points + 1;
 				
 			

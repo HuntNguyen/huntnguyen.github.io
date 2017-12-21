@@ -66,7 +66,7 @@
                 circles=[];
                 
                 function makeCircle() {
-                    circle = draw.randomCircleInArea(canvas, true, true, '#999', 2);
+                    circle = draw.randomCircleInArea(canvas, false, false, '#999', 2);
 
                     if (circle.alpha < .2) {
     	            draw.blurFilterOn(circle);
@@ -79,11 +79,12 @@
                     circle.addEventListener("click", function(event) { 
 					   event.target.velocityX *= -1;
 					   event.target.velocityY *= -1;
-					    console.log("circle clicked");
-					  // view.removeChild(event.target);
+					   
+					    //console.log("circle clicked");
+					  //view.removeChild(event.target);
 					    
 					    makeCircle();
-					})
+					});
                 }
                 
                 /* 
