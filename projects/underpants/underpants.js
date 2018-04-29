@@ -390,27 +390,35 @@ _.contains = function(array, value){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-_.every = function(collection, func){
+_.every = function(collection, funct) {
     if (Array.isArray(collection)) {
         for (var i = 0; i < collection.length; i++) {
             var element = collection[i];
-            if(func(element, i, collection) || i === collection.length-1) {
-                return true;
-            } else if (i !== collection.length-1) {
+            if(!funct(element, i, collection)){
                 return false;
             }
         }
+        return true;
         //objects
     } else if (typeof collection === 'object') {
         for (var key in collection) {
             var value = collection[key];
-            if(func(value, key, collection) && key !== collection.length-1) {
-                return true;
-            } else if (key === collection.length-1) {
+            if(!funct(value, key, collection)) {
                 return false;
             }
         }
+        return true;
     }
+    
+    /*
+    var isFalse = true;
+    _.each(collection, function(element, loc, collection) {
+       if (!func(element, loc, collection)) {
+            isFalse = false;
+       }
+    });
+    return isFalse;
+    */
 };
 
 
