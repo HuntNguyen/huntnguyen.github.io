@@ -390,36 +390,39 @@ _.contains = function(array, value){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 
-_.every = function(collection, funct) {
-    if (Array.isArray(collection)) {
-        for (var i = 0; i < collection.length; i++) {
-            var element = collection[i];
-            if(!funct(element, i, collection)){
-                return false;
-            }
-        }
-        return true;
-        //objects
-    } else if (typeof collection === 'object') {
-        for (var key in collection) {
-            var value = collection[key];
-            if(!funct(value, key, collection)) {
-                return false;
-            }
-        }
-        return true;
+_.every = function(collection, func) {
+    if(func){
+        var isFalse = true;
+        _.each(collection, function(element, loc, collection) {
+            if (!func(element, loc, collection)) {
+                isFalse = false;
+           }
+        });
+        return isFalse;
+    } else{
+        isFalse = true;
+        _.each(collection, function(element, loc, collection) {
+           if (!element) {
+                isFalse = false;
+           }
+        });
+        return isFalse;
     }
     
-    /*
-    var isFalse = true;
-    _.each(collection, function(element, loc, collection) {
-       if (!func(element, loc, collection)) {
-            isFalse = false;
-       }
-    });
-    return isFalse;
-    */
-};
+    // var isFalse = true;
+    // _.each(collection, function(element, loc, collection) {
+    //     if (!func(element, loc, collection)) {
+    //         isFalse = false;
+    //     }
+        
+    //     if (!element) {
+    //         isFalse = false;
+    //     }
+    // });
+    // return isFalse;
+    
+        
+};  
 
 
 /** _.some()
@@ -445,25 +448,23 @@ _.every = function(collection, funct) {
 
 
 _.some = function(collection, func){
-  if (Array.isArray(collection)) {
-        for (var i = 0; i < collection.length; i++) {
-            var element = collection[i];
-            if(func(element, i, collection) && i !== collection.length-1) {
-                return true;
-            } else if (i === collection.length-1) {
-                return false;
+  if (func) {
+        var isTrue = false;
+        _.each(collection, function(element, loc, col) {
+            if (func(element, loc, col)) {
+                isTrue = true;
             }
-        }
-        //objects
-    } else if (typeof collection === 'object') {
-        for (var key in collection) {
-            var value = collection[key];
-            if(func(value, key, collection) && key !== collection.length-1) {
-                return true;
-            } else if (key === collection.length-1) {
-                return false;
+        });
+        return isTrue;
+    } else {
+        
+        isTrue = false;
+        _.each(collection, function(element, loc, col) {
+            if (element) {
+                isTrue = true;
             }
-        }
+        });
+        return isTrue;
     }
 };
   
@@ -488,8 +489,20 @@ _.some = function(collection, func){
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
-_.reduce = function reduce(array, func, seed) {
-
+_.reduce = function(arr, func, seed) {
+   if (typeof seed === 'undefined') {
+        var prevRes = arr[0]/10;
+    } else {
+        prevRes = seed;
+    }
+    for (var i = 0; i < arr.length; i++) {
+        var element = arr[i];
+        var result = func(prevRes, element, i);
+        if (i !== arr.length-1) {
+            prevRes = result;
+        }
+    }
+    return result;
 };
 
 
