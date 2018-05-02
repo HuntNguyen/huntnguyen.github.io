@@ -414,7 +414,9 @@ _.every = function(collection, func) {
     //     if (!func(element, loc, collection)) {
     //         isFalse = false;
     //     }
-    //    }else{
+    //    }
+    // }
+    // else{
     //     if (!element) {
     //         isFalse = false;
     //     }
