@@ -408,21 +408,7 @@ _.every = function(collection, func) {
         });
         return isFalse;
     }
-    //if(func){
-    // var isFalse = true;
-    // _.each(collection, function(element, loc, collection) {
-    //     if (!func(element, loc, collection)) {
-    //         isFalse = false;
-    //     }
-    //    }
-    // }
-    // else{
-    //     if (!element) {
-    //         isFalse = false;
-    //     }
-    //  }
-    // });
-    // return isFalse;
+    
  
 };  
 
