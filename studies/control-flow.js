@@ -50,5 +50,5 @@ switch(subject){
 }
 /*
 performs different actions based on which condition is true
-kind of like if,else-if,else
+kind of like if,else-if,else 
 */
