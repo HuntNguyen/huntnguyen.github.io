@@ -2,41 +2,29 @@
 <html>
     <head>
         <title>Hunter's Website</title>
-               <style>
+        <style>
             body {
-                background: rgb(51, 204, 255);
-                color:rgb(0, 153, 255);
                 padding: 10px;
-                font-family: Comic sans ms;
                 background-image: url(https://hpmedia.bloomsbury.com/rep/g/page-background-shell%20-%202.png);
                 background-repeat:no-repeat;
                 background-size:cover;
-                background-blend-mode:darken;
-                
             }
-            header {
-                font-size: 1.5em;
-                font-weight: bold;
-            }
-            [id=all-contents] {
-                max-width: 800px;
-                margin: auto;
+            header{
+                color: red;
+                padding: 20px;
+                width: 300px;
+                display: inline-block;
+                font-size: 15px;
             }
     
             /* navigation menu */
             nav {
-                background: black;
-                margin: 10px auto; margin-bottom: 20px;
-                display: flex;
-                padding: 20px;
-                border-radius: 10px;
-                border-style:ridge;
-               
+                float: right;
             }
             nav header {
                 display: flex;
                 align-items: center;
-                color: blue;
+                color: black;
                 flex: 1;
             }
             nav ul {
@@ -48,87 +36,42 @@
             }
             nav a {
                 text-decoration: none;
-                color: #fff;
+                color: red;
             }
             
             /* main container area beneath menu */
             main {
                 background:white;
-                display: flex;
-                border-radius:10px;
-                border-style:groove;
-                border-width:10px;
             }
-            [class=sidebar] {
-                margin-right: 25px;
-                padding: 10px;
-            }
-            [class=sidebar] img {
-                width: 200px;
-            }
-            [class=main2] {
-                flex:1;
-                padding:15px;
-                color:blue;
-                margin: 10px auto; margin-bottom: 20px;
-               
-                
-            }
+            
             [class=content] {
                 flex: 1;
                 padding: 15px;
-                color:blue;
+                color:red;
             }
-            [class=hunter]{
-            border-style:solid;
-            border-width:5px;
-            border-radius:20%;
-            border-color:blue;
+            [id=all-contents] {
+                max-width: 800px;
+                margin: auto;
             }
-            
-            
-        
-            
-            
-            
            </style>
-           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-           <script>
-                    $(document).ready(function(){
-                         $("button").click(function(){
-                            $("main.main2").animate({
-                                height: '200px',
-                                left: '100px',
-                                width: '150px',
-                                
-                                
-                            });
-                         
-                         
-              });
-          });
-                    
-           </script>
-    </head>
-    
-    <body>
-        <div id="all-contents">
-            <nav> 
-            <header>Hunter's Website</header>
-                <ul>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="all-contents">
+        <header>Hunter</header>
+        <nav> 
+            <ul>
                     <li><a class="hover" href="index.html">Home</a></li>
                     <li><a class="hover" href="portfolio.html">Portfolio</a></li>
                     <li><a class="hover" href="studies.html">Studies</a></li>
                 </ul>
             </nav>
             
-            <main>
-                <div class="sidebar"> 
-                <img class="hunter" src="https://www.freelogoservices.com/api/main/ph/zjHl2lgef9cYrQL0JFa7kzbw2vuDrh5JnRzP0zd9OXdE9g5shnN1i...Bv9ettdV9dsBUGw0pY">
-                </div>
-                    
+            <main>  
                 <div class="content">
-                    <header>Hunter Nguyen</header>
+                    <p>Hunter Nguyen</p>
                     <p>Freshman at the University of New Orleans</p>
                     <p>Major: Computer Science</p>
                 </div>
