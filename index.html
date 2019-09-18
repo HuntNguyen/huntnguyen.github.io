@@ -2,36 +2,37 @@
 <html>
     <head>
         <title>Hunter's Website</title>
-        <style>
+               <style>
             body {
-                padding: 10px;
-                background-image: url(https://hpmedia.bloomsbury.com/rep/g/page-background-shell%20-%202.png);
-                background-repeat:no-repeat;
-                background-size:cover;
+                font-family: poppins, Arial, sans-serif;
+                background: black;
             }
-            header{
-                color: red;
-                padding: 20px;
-                width: 300px;
-                display: inline-block;
-                font-size: 15px;
+            header {
+                font-size: 1.5em;
+                font-weight: bold;
             }
     
             /* navigation menu */
             nav {
-                float: right;
+                background: black;
+                margin: 10px auto;
+                margin-bottom: 20px;
+                display: flex;
+                padding: 20px;
+               
             }
             nav header {
                 display: flex;
                 align-items: center;
-                color: black;
                 flex: 1;
+                margin-left: 340px;
             }
             nav ul {
                 list-style-image: none;
+                margin-right: 380px;
             }
             nav li {
-                display: inline-block;
+                display: inline;
                 padding: 0 10px;
             }
             nav a {
@@ -41,37 +42,45 @@
             
             /* main container area beneath menu */
             main {
-                background:white;
+                background:black;
+                display: flex;
+                text-align: center;
             }
-            
             [class=content] {
                 flex: 1;
                 padding: 15px;
                 color:red;
             }
-            [id=all-contents] {
-                max-width: 800px;
-                margin: auto;
+            [class = home]{
+                color: red;
             }
+            [class=title]{
+                text-align: center!important;
+                line-height: .1vh;
+                font-size: 20vw;
+            }
+            
            </style>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-</head>
-
-<body>
-    <div id="all-contents">
-        <header>Hunter</header>
-        <nav> 
-            <ul>
-                    <li><a class="hover" href="index.html">Home</a></li>
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+        <div id="all-contents">
+            <nav class = "navbar"> 
+            <header><a class = "hover" href="index.html">HUNTER</a></header>
+            <div>
+                <ul>
                     <li><a class="hover" href="portfolio.html">Portfolio</a></li>
                     <li><a class="hover" href="studies.html">Studies</a></li>
                 </ul>
+            </div>
             </nav>
-            
-            <main>  
+            <section class = "home">
+                <h1 class = "title">HUNTER</h1>
+            </section>
+            <main>
                 <div class="content">
-                    <p>Hunter Nguyen</p>
+                    <header>Hunter Nguyen</header>
                     <p>Freshman at the University of New Orleans</p>
                     <p>Major: Computer Science</p>
                 </div>
