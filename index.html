@@ -1,43 +1,91 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Hunter's Website</title>
-            <style>
-            
+        <title>Hunter Nguyen</title>
+            <style type = "text/css">
+            nav{
+                background: red;
+                display: flex;
+                padding: 10px auto;
+                margin: 20px;
+                align-items: center;
+            }
+            nav header{
+                color: blue;
+                margin: 10px;
+                align-items: center;
+                flex: 1;
+            }
+            nav ul{
+                list-style-image: none;
+            }
+            nav li{
+                display: inline-block;
+                overflow: auto;
+                align-items: center;
+                padding: 0 10px;
+            }
+            .container{
+                background: pink;
+                text-align: center;
+                display: grid;
+                grid-gap: 20px;
+                grid-template-columns: 1fr 1fr;
+                padding: 50px;
+                margin: 20px;
+            }
+            .picture{
+                background:lightblue;
+            }
+            .description{
+                background: grey;
+            }
+            .project-description{
+                background: lightgreen;
+            }
+            .project{
+                background: purple;
+            }
+            .contact-info{
+                background: orange;
+                max-width: 50%;
+                margin: 0 auto;
+                text-align: center;
+            }
             </style>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
     
     <body>
         <div id="all">
-            <nav class = "navbar"> 
-            <header><a class = "hover" href="index.html">HUNTER NGUYEN</a></header>
-            <div>
+            <nav > 
+            <header><a class = "hover-home" href="index.html">HUNTER NGUYEN</a></header>
                 <ul>
-                    <li><a class="hover" href="portfolio.html">Portfolio</a> GET RID OF IN FINAL</li>
-                    <li><a class="hover" href="studies.html">Studies</a> GET RID OF IN FINAL</li>
+                    <li><a class="hover" href="portfolio.html">Portfolio</a></li>
+                    <li><a class="hover" href="studies.html">Studies</a></li>
                     <li><a class = "hover" href = "studies.html">Contact Me</a></li>
                 </ul>
-            </div>
             </nav>
             <main>
-                <div class="picture">
-                    <p>insert picture here LEFT JUSTIFIED</p>
+                <div class = "container">
+                    <div class="picture">
+                        <p>insert picture here LEFT JUSTIFIED</p>
+                    </div>
+                    <div class="description">
+                        <header>Hunter Nguyen RIGHT JUSTIFIED</header>
+                        <p>Sophomore at the University of New Orleans RIGHT JUSTIFIED</p>
+                        <p>Major: Computer Science RIGHT JUSTIFIED</p>
+                    </div>
+                    <div class="project-description">
+                        <p>insert description of photography sites here LEFT JUSTIFIED</p>
+                    </div>
+                    <div class = "project">
+                        <p>insert picture/link to photography sites here RIGHT JUSTIFIED</p>
+                    </div>
                 </div>
-                <div class="description">
-                    <header>Hunter Nguyen RIGHT JUSTIFIED</header>
-                    <p>Sophomore at the University of New Orleans RIGHT JUSTIFIED</p>
-                    <p>Major: Computer Science RIGHT JUSTIFIED</p>
-                </div>
-                <div class="description">
-                    <p>insert description of photography sites here LEFT JUSTIFIED</p>
-                </div>
-                <div class = "photography-sites">
-                    <p>insert picture/link to photography sites here RIGHT JUSTIFIED</p>
-                </div>
-                <div class = "contact info">
-                    <p>insert contact info here CENTERED</p>
-                </div>
+                    <div class = "contact-info">
+                        <p>insert contact info here CENTERED</p>
+                    </div>
             </main>
         </div>
     </body>
